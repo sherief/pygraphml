@@ -29,6 +29,8 @@ class GraphMLParser:
             attr_node.setAttribute('id', a.name)
             attr_node.setAttribute('attr.name', a.name)
             attr_node.setAttribute('attr.type', a.type)
+            if a.name == "weight":
+                attr_node.setAttribute('for', 'edge')
             root.appendChild(attr_node)
         
         graph_node = doc.createElement('graph')
